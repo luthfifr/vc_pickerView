@@ -7,9 +7,9 @@
 //
 
 import UIKit
-
+/*
 //single component
-/*class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate, UITextFieldDelegate {
+class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate, UITextFieldDelegate {
 
     @available(iOS 2.0, *)
     public func numberOfComponents(in pickerView: UIPickerView) -> Int {
@@ -157,8 +157,10 @@ class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
     func donePicker()
     {
         if (textField.isEditing) {
-            let row = timePicker.selectedRow(inComponent: 0)
-            textField.text = pickerView(timePicker, titleForRow: row, forComponent: 0)!+" : "+pickerView(timePicker, titleForRow: row, forComponent: 1)!+" "+pickerView(timePicker, titleForRow: row, forComponent: 2)!
+            let row0 = timePicker.selectedRow(inComponent: 0)
+            let row1 = timePicker.selectedRow(inComponent: 1)
+            let row2 = timePicker.selectedRow(inComponent: 2)
+            textField.text = pickerView(timePicker, titleForRow: row0, forComponent: 0)!+" : "+pickerView(timePicker, titleForRow: row1, forComponent: 1)!+" "+pickerView(timePicker, titleForRow: row2, forComponent: 2)!
         }
         
         self.view.endEditing(true)
