@@ -117,9 +117,9 @@ class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
         toolBar.tintColor = UIColor(red: 0/255, green: 122/255, blue: 255/255, alpha: 1)
         toolBar.sizeToFit()
         
-        let doneButton = UIBarButtonItem(title: "Done", style: UIBarButtonItemStyle.plain, target: self, action: #selector(ViewController.donePicker))
-        let spaceButton = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.flexibleSpace, target: nil, action: nil)
-        let cancelButton = UIBarButtonItem(title: "Cancel", style: UIBarButtonItemStyle.plain, target: self, action: #selector(ViewController.cancelPicker))
+        let doneButton = UIBarButtonItem(title: "Done", style: UIBarButtonItem.Style.plain, target: self, action: #selector(ViewController.donePicker))
+        let spaceButton = UIBarButtonItem(barButtonSystemItem: UIBarButtonItem.SystemItem.flexibleSpace, target: nil, action: nil)
+        let cancelButton = UIBarButtonItem(title: "Cancel", style: UIBarButtonItem.Style.plain, target: self, action: #selector(ViewController.cancelPicker))
         
         toolBar.setItems([cancelButton, spaceButton, doneButton], animated: false)
         toolBar.isUserInteractionEnabled = true
@@ -154,7 +154,7 @@ class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
         timePicker.isHidden = true
     }
     
-    func donePicker()
+    @objc func donePicker()
     {
         if (textField.isEditing) {
             let row0 = timePicker.selectedRow(inComponent: 0)
@@ -166,7 +166,7 @@ class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
         self.view.endEditing(true)
     }
     
-    func cancelPicker(){
+    @objc func cancelPicker(){
         self.view.endEditing(true)
     }
     
